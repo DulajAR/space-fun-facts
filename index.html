@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts App</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .fact-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="fact-container">
+        <h1>Fun Fact of the Day</h1>
+        <p id="fact-text">Loading...</p>
+        <button onclick="generateFact()">Generate Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "The largest volcano in the solar system is not on Earth, but on Mars. Olympus Mons on Mars is about 13.6 miles (22 km) high, making it nearly three times the height of Mount Everest.",
+            "There is a planet where it rains glass sideways. On the exoplanet HD 189733b, located 63 light-years away from Earth, the wind speeds can reach up to 5,400 mph (2 km/s), causing the rain to fall horizontally.",
+            "The Sun makes up 99.86% of the mass in our solar system. It is so massive that it could fit 1.3 million Earths inside it.",
+            "The coldest place in the universe is not on Earth, but in outer space. The Boomerang Nebula, a cloud of dust and gas about 5,000 light-years away from Earth, has a temperature of -457.6°F (-272°C).",
+            "There is a diamond planet named 55 Cancri e, which is twice the size of Earth and has a surface made of graphite and diamond."
+        ];
+
+        function generateFact() {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('fact-text').innerText = randomFact;
+        }
+    </script>
+</body>
+</html>
